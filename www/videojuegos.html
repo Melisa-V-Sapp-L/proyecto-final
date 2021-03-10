@@ -14,6 +14,17 @@
     <div class="page-content">
         <div class="block-title">Mis torneos: Videojuegos.</div>
         <div class="block block-strong">
+        <p>Ingresa el nombre del torneo.</p>
+        <div class="item-inner">
+              <div class="item-input-wrap">
+                <input type="text" id="torneo" maxlength="15" placeholder="Nombre del torneo" />
+                <span class="input-clear-button"></span>
+              </div>
+        </div>
+        
+       </div>
+
+        <div class="block block-strong">
         <p>Ingresa la cantidad de participantes.</p>
         <div class="item-inner">
               <div class="item-input-wrap">
@@ -23,15 +34,9 @@
             </div>
         </div>
 
-        <div class="block block-strong">
-        <p>Ingresa los nombres de esos participantes.</p>
-        <div class="item-inner">
-              <div class="item-input-wrap">
-                <input type="text" id="n_1" maxlength="10" placeholder="Jugador o Equipo" />
-                <span class="input-clear-button"></span>
-              </div>
-        </div>
-       </div>
+        <button class="col button button-fill color-blue" id="btnGuardar">Guardar</button>
+        <div id="nombres"></div>
+        
       <div class="block block-strong">
         <div class="row">
           <button class="col button button-raised" href="#" id="btnVolver">Volver</button>

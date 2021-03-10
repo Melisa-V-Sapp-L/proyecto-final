@@ -38,24 +38,26 @@ var app = new Framework7({
 
 var mainView = app.views.create('.view-main');
 
-// Handle Cordova Device Ready Event
+var nomtorneo="";
+var nro=0;
+
+
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
 
-// Option 1. Using one 'page:init' handler for all pages
+
 $$(document).on('page:init', function (e) {
-    // Do something here when page loaded and initialized
+    
     console.log(e);
 })
 
-
+///Pagina de modalidad deportiva
 $$(document).on('page:init', '.page[data-name="deportivo"]', function (e) {
    //Para volver a index
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/index/');
   });
-
    //Para ir a copa
       $$('#btnCopa').on('click', function() {
     mainView.router.navigate('/copa/');
@@ -68,10 +70,12 @@ $$(document).on('page:init', '.page[data-name="deportivo"]', function (e) {
       $$('#btnGrupo').on('click', function() {
     mainView.router.navigate('/grupo/');
   });  
-
+  //Para guardar el nombre del torneo, la cantidad de participantes y sus respectivos nombres
+     $$('#btnGuardar').on('click', fnGuardar);
 })
 
 
+///Pagina de modalidad juegos de mesa
 $$(document).on('page:init', '.page[data-name="mesa"]', function (e) {
    //Para volver a index
       $$('#btnVolver').on('click', function() {
@@ -85,10 +89,11 @@ $$(document).on('page:init', '.page[data-name="mesa"]', function (e) {
       $$('#btnNoTeam').on('click', function() {
     mainView.router.navigate('/noequipo/');
   }); 
-
+//Para guardar el nombre del torneo, la cantidad de participantes y sus respectivos nombres
+     $$('#btnGuardar').on('click', fnGuardar);
 })
 
-
+///Pagina de modalidad videojuegos
 $$(document).on('page:init', '.page[data-name="videojuegos"]', function (e) {
    //Para volver a index
       $$('#btnVolver').on('click', function() {
@@ -105,35 +110,76 @@ $$(document).on('page:init', '.page[data-name="videojuegos"]', function (e) {
   //Para ir a equipo vs equipo
       $$('#btnVsE').on('click', function() {
     mainView.router.navigate('/vsequipo/');
-  });      
+  }); 
+  //Para guardar el nombre del torneo, la cantidad de participantes y sus respectivos nombres
+     $$('#btnGuardar').on('click', fnGuardar);     
 })
+///funciones//////////////////////////////////////////
 
+function fnGuardar(){
+  nomtorneo=$$('#torneo').val();
+  nro=$$('#cantidad').val();
+
+  $$('#nombres').html('');
+  for (i = 0; i < nro; i++) {
+     $$('#nombres').append('<input type="text" id="n_'+ nro +'" maxlength="15" placeholder="Equipo o Jugador" />');
+  }
+}
+
+
+
+/////////////////////////////////////////////////////////////////
 
 $$(document).on('page:init', '.page[data-name="copa"]', function (e) {
    //Para volver a deportivo
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/deportivo/');
   });
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
+  });     
 })
+
+
 $$(document).on('page:init', '.page[data-name="liga"]', function (e) {
    //Para volver a deportivo
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/deportivo/');
   });
-})      
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
+  });     
+})   
+
+
 $$(document).on('page:init', '.page[data-name="grupo"]', function (e) {
    //Para volver a deportivo
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/deportivo/');
+  }); 
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
   });      
 })
 
+/////////////////////////////////////////////////////////
 
 $$(document).on('page:init', '.page[data-name="vsjugador"]', function (e) {
    //Para volver a videojuegos
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/videojuegos/');
   });
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
+  });     
 })
 
 
@@ -142,6 +188,10 @@ $$(document).on('page:init', '.page[data-name="vstodos"]', function (e) {
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/videojuegos/');
   });
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
+  });     
 })
 
 
@@ -149,22 +199,40 @@ $$(document).on('page:init', '.page[data-name="vsequipo"]', function (e) {
    //Para volver a videojuegos
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/videojuegos/');
+  });
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
   });      
 })
 
-
+///////////////////////////////////////////////////////
 
 $$(document).on('page:init', '.page[data-name="equipo"]', function (e) {
    //Para volver a mesa
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/mesa/');
   });
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
+  });     
+
 })  
+
 
     
 $$(document).on('page:init', '.page[data-name="noequipo"]', function (e) {
    //Para volver a mesa
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/mesa/');
-  });      
+  }); 
+
+  //Para volver a Index
+      $$('#btnInicio').on('click', function() {
+    mainView.router.navigate('/index/');
+  });  
+
 })
