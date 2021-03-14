@@ -70,7 +70,7 @@ $$(document).on('page:init', '.page[data-name="deportivo"]', function (e) {
       $$('#btnGrupo').on('click', function() {
     mainView.router.navigate('/grupo/');
   });  
-  //Para guardar el nombre del torneo, la cantidad de participantes y sus respectivos nombres
+  //Para guardar el nombre del torneo y la cantidad de participantes
      $$('#btnGuardar').on('click', fnGuardar);
 })
 
@@ -120,10 +120,20 @@ function fnGuardar(){
   nomtorneo=$$('#torneo').val();
   nro=$$('#cantidad').val();
 
+  console.log('ver el nombre del torneo '+ nomtorneo + ' y la cantidad de jugadores/equipos ' + nro);
+
+  $$('#titulo').html('');
+  $$('#titulo').append('<h2>Escribe los nombres de los participantes del torneo '+nomtorneo+'.</h2>');
+
   $$('#nombres').html('');
   for (i = 0; i < nro; i++) {
-     $$('#nombres').append('<input type="text" id="n_'+ nro +'" maxlength="15" placeholder="Equipo o Jugador" />');
+     $$('#nombres').append('<input type="text" id="n_'+ i +'" maxlength="15" placeholder="Equipo o Jugador  '+ i +'" />');
   }
+
+  if ($$('#ver1').hasClass('vista1')) {
+  $$('#ver1').removeClass('vista1').addClass('vista2');
+  $S('#ver2').removeClass('vista2').addClass('vista1');}
+
 }
 
 
