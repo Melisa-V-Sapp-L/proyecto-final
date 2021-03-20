@@ -1,3 +1,28 @@
+article{
+	margin: 10% 5%;
+	padding:5%;
+}
+
+@font-face {
+    font-family: 'icrackregular';
+    src: url('icrack-webfont.woff2') format('woff2'),
+         url('icrack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+  font-family: "icrackregular";
+  font-size: 100%;
+}
+
+
+
+.datos{
+	height: 5%;
+	width: 50%;
+}
+
 .vista1{
 	display: block;
 	visibility: visible;
