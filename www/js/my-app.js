@@ -153,15 +153,11 @@ function fnCopa(){
   $$('#copavs').append('<div class="block block-strong"><p>Torneo '+nomtorneo+'</p></div>');
 
   $$('#coparonda').html('');
-  if (llave == 16) {
-   $$('#coparonda').append('<div class="block block-strong"><p>Ronda 1</p></div>');
- } else if (llave == 8) {
-   $$('#coparonda').append('<div class="block block-strong"><p>Ronda 1</p></div>');
- } else if (llave == 4) {
+  if (llave>2) {
    $$('#coparonda').append('<div class="block block-strong"><p>Ronda 1</p></div>');
  } else if (llave == 2) {
    $$('#coparonda').append('<div class="block block-strong"><p>Semifinal</p></div>');
- } else {
+ } else if (llave == 1){
    $$('#coparonda').append('<div class="block block-strong"><p>Final</p></div>'); 
  } 
 
