@@ -8,24 +8,14 @@
     font-style: normal;
 }
 
-:root,
-:root.theme-dark,
-:root .theme-dark {
-  --f7-bars-bg-color: var(--f7-theme-color);
-  --f7-bars-bg-color-rgb: var(--f7-theme-color-rgb);
-  --f7-bars-translucent-opacity: 0.9;
-  --f7-bars-text-color: #fff;
-  --f7-bars-link-color: #fff;
-  
-  --f7-bars-border-color: transparent;
-  --f7-tabbar-link-active-color: #fff;
-  
-  --f7-sheet-border-color: transparent;
-  --f7-tabbar-link-active-border-color: #fff;
-}
+
 
 body{
 	background-color: #fdfa88;
+}
+
+.navbar{
+	border: 1px solid black;
 }
 
 .page{
@@ -37,20 +27,9 @@ article{
 	padding:5%;
 }
 
-
-img{
-	height: 100%;
-	margin: 1% 1%;
-}
-
-#nom{
-	width: 110%;
-}
-
 #logo{
 	filter: saturate(7);
-	border: 1px solid black;
-    border-radius: 4px;
+	height: 100%;
 }
 
 #btn, #btnCopa, #btnLiga, #btnGrupo{
@@ -72,6 +51,10 @@ p {
 	height: 10%;
 }
 
+.block-strong{
+	border: 5px solid black;
+	background-color: #fee407;
+}
 
 .datos{
 	height: 5%;
