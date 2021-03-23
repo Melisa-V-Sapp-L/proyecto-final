@@ -1,11 +1,8 @@
 
 
 @font-face {
-    font-family: 'icrackregular';
-    src: url('icrack-webfont.woff2') format('woff2'),
-         url('icrack-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'iCrack';
+    src: url('../fonts/iCrack.ttf');    
 }
 
 
@@ -14,9 +11,6 @@ body{
 	background-color: #fdfa88;
 }
 
-.navbar{
-	border: 5px solid black;
-}
 
 .page{
 	background-color: #fdfa88;
@@ -25,6 +19,16 @@ body{
 article{
 	margin: 10% 5%;
 	padding:5%;
+}
+
+div{
+	text-align:center;
+}
+
+
+
+#title{
+	font-size: 340%;
 }
 
 #logo{
@@ -37,8 +41,9 @@ article{
 }
 
 p {
-  font-family: "icrackregular";
-  font-size: 140%;
+  font-family: "iCrack";
+  font-size: 160%;
+  text-align:center;
 }
 
 .popup-open{

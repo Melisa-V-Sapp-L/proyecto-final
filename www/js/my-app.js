@@ -42,7 +42,7 @@ var nomtorneo="";
 var nro=0;
 var key=0;
 var ides=[];
-
+var names=[];
 
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
@@ -156,40 +156,42 @@ function fnContinuar(){
   $$('#ver1').removeClass('vista1').addClass('vista2');
   $$('#ver2').removeClass('vista2').addClass('vista1');}
 }
-
+//.......................................................................................//
 function fnVolverVista(){
   if ($$('#ver1').hasClass('vista2')) {
   $$('#ver1').removeClass('vista2').addClass('vista1');
   $$('#ver2').removeClass('vista1').addClass('vista2');}
 }
-
+//.......................................................................................//
 function fnGuardar(){
   for (i = 0; i < nro; i++) {
-     ides.push('n_'+i);
+    ides.push('n_'+i);
+  nombre= $$('#n_'+i).val();
+  names.push(nombre);
   }
 
-  console.log('ver '+ides);
-
-
+  console.log('ver '+ides+' y '+names);
 
 
   if ($$('#ver2').hasClass('vista1')) {
   $$('#ver2').removeClass('vista1').addClass('vista2');
   $$('#ver3').removeClass('vista3').addClass('vista1');}
 }
-
+//.......................................................................................//
 function fnVolverVista2(){
   if ($$('#ver3').hasClass('vista1')) {
   $$('#ver3').removeClass('vista1').addClass('vista3');
   $$('#ver2').removeClass('vista2').addClass('vista1');}
 }
 
-
+//.......................................................................................//
 function fnCopa(){
 
   key=nro/2;
   var llave=parseInt(key);
   var resto=key-llave;
+  min=0;
+  max=names.length-1;
 
   console.log('ver key '+ key +' ver cantidad de llave '+llave+' ver el resto '+ resto);
 
@@ -205,10 +207,17 @@ function fnCopa(){
    $$('#coparonda').append('<div class="block block-strong"><p>Final</p></div>'); 
  } 
 
+  for (i = 0; i < llave; i++){
+    aleatorio=math.random()*(max-min)+min;
+  }
+
+
   $$('#copallaves').html('');
   for (i = 0; i < llave; i++) {
      $$('#copallaves').append('<div class="block block-strong"><div class="row"><div> llave '+i+'</div><input type="number" id="puntos" class="p1" max="10" min="0" minlength="1" maxlength="2" placeholder="0" /></div><div class="row"><div> llave '+i+'</div><input type="number" id="puntos" class="p1" max="10" min="0" minlength="1" maxlength="2" placeholder="0"/></div></div>');
   }
+  
+
 }
 
 
