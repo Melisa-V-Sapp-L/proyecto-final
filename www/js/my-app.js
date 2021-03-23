@@ -41,7 +41,7 @@ var mainView = app.views.create('.view-main');
 var nomtorneo="";
 var nro=0;
 var key=0;
-var names=[];
+var ides=[];
 
 
 $$(document).on('deviceready', function() {
@@ -165,10 +165,10 @@ function fnVolverVista(){
 
 function fnGuardar(){
   for (i = 0; i < nro; i++) {
-     names.push('n_'+i);
+     ides.push('n_'+i);
   }
 
-  console.log('ver '+names);
+  console.log('ver '+ides);
 
 
 
