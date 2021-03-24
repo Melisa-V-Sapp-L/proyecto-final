@@ -233,7 +233,7 @@ function fnLiga(){
 
   $$('#ligallaves').html('');
   for (i=0 ; i<nro ; i++) {
-    $$('#ligallaves').append('<div class="block block-strong"><div class="col"><div>a vs b</div><div class="col"> <input type="number" max="10" min="0" minlength="1" maxlength="2" placeholder="0"/><input type="number" max="10" min="0" minlength="1" maxlength="2" placeholder="0"/></div></div>');
+    $$('#ligallaves').append('<div class="block block-strong"><div class="row"><center><div>a vs b</div></center></div><div class="row"><input type="number" max="10" min="0" minlength="1" maxlength="2" placeholder="0"/><input type="number" max="10" min="0" minlength="1" maxlength="2" placeholder="0"/></div></div>');
   }
   
   }

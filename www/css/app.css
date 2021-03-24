@@ -1,11 +1,14 @@
 
 
 @font-face {
-    font-family: 'iCrack';
-    src: url('../fonts/iCrack.ttf');    
+    font-family: 'Critical-Mass-LDR';
+    src: url('../fonts/Critical-Mass-LDR.ttf');    
 }
 
-
+@font-face {
+    font-family: 'Stenciland free';
+    src: url('../fonts/Stenciland free.otf');    
+}
 
 body{
 	background-color: #fdfa88;
@@ -25,10 +28,13 @@ div{
 	text-align:center;
 }
 
-
+a{
+	font-family: "Critical-Mass-LDR";
+}
 
 #title{
-	font-size: 340%;
+	font-size: 150%;
+	font-family: "Critical-Mass-LDR";
 }
 
 #logo{
@@ -40,9 +46,9 @@ div{
 	margin: 7% 0%;
 }
 
-p {
-  font-family: "iCrack";
-  font-size: 160%;
+p { 
+  font-family: "Stenciland free";
+  font-size: 100%;
   text-align:center;
 }
 
@@ -51,6 +57,8 @@ p {
 }
 
 .block-title{
+	padding:3%;
+	font-family: "Stenciland free";
 	font-size: 140%;
 	color: black;
 	height: 10%;
@@ -62,6 +70,7 @@ p {
 }
 
 .datos{
+    text-align:center;
 	height: 5%;
 	width: 50%;
 }
