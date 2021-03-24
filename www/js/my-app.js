@@ -89,6 +89,14 @@ $$(document).on('page:init', '.page[data-name="deportivo"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="copa"]', function (e) {
 
+  //Para la función copa
+    $$('#btnCopa').on('click', fnCopa);
+
+  //Para ir a copa
+      $$('#btnCopa').on('click', function() {
+    mainView.router.navigate('/copa/');
+    });   
+
 
   //Para volver a deportivo
       $$('#btnVolver').on('click', function() {
