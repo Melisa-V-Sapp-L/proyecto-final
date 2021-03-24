@@ -33,13 +33,16 @@ a{
 }
 
 #title{
-	font-size: 150%;
+	font-size: 130%;
 	font-family: "Critical-Mass-LDR";
 }
 
 #logo{
+	margin: 1% 1%;
+	padding:1%;
 	filter: saturate(7);
-	height: 100%;
+	height: 70%;
+	border: 5px solid black;
 }
 
 #btn, #btnCopa, #btnLiga, #btnGrupo{
@@ -50,6 +53,10 @@ p {
   font-family: "Stenciland free";
   font-size: 100%;
   text-align:center;
+}
+
+.navbar-inner{
+	background-color: #fee407;
 }
 
 .popup-open{
