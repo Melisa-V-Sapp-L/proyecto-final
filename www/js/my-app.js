@@ -43,6 +43,7 @@ var nro=0;
 var key=0;
 var ides=[];
 var names=[];
+var names2=[];
 
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
@@ -61,20 +62,7 @@ $$(document).on('page:init', '.page[data-name="deportivo"]', function (e) {
       $$('#btnVolver').on('click', function() {
     mainView.router.navigate('/index/');
   });
-   //Para ir a copa
-      $$('#btnCopa').on('click', function() {
-    mainView.router.navigate('/copa/');
-    }); 
-
-   //Para ir a liga
-      $$('#btnLiga').on('click', function() {
-    mainView.router.navigate('/liga/');
-    });   
-  //Para ir a grupo
-      $$('#btnGrupo').on('click', function() {
-    mainView.router.navigate('/grupo/');
-  }); 
-
+   
 
   ////////////////Eventos click/////////////////////////////////////////
 
@@ -88,8 +76,12 @@ $$(document).on('page:init', '.page[data-name="deportivo"]', function (e) {
   
   //Para la función copa
     $$('#btnCopa').on('click', fnCopa);
+
+  //Para la funcion liga
+    $$('#btnLiga').on('click', fnLiga);
      
-      
+  //Para la funcion Grupo
+    $$('#btnGrupo').on('click', fnGrupo);    
 })
 
 
@@ -136,7 +128,7 @@ $$(document).on('page:init', '.page[data-name="grupo"]', function (e) {
 })
 
 
-///////////////////////////////////Funciones//////////////////////////////////////////
+///////////////////////////////////Funciones Deportivo//////////////////////////////////////////
 
 function fnContinuar(){
   nomtorneo=$$('#torneo').val();
@@ -168,9 +160,10 @@ function fnGuardar(){
     ides.push('n_'+i);
   nombre= $$('#n_'+i).val();
   names.push(nombre);
+  names2.push(nombre);
   }
 
-  console.log('ver '+ides+' y '+names);
+  console.log('ver '+ides+' y '+names+' y '+names2);
 
 
   if ($$('#ver2').hasClass('vista1')) {
@@ -187,11 +180,12 @@ function fnVolverVista2(){
 //.......................................................................................//
 function fnCopa(){
 
+  mainView.router.navigate('/copa/');
+
   key=nro/2;
   var llave=parseInt(key);
   var resto=key-llave;
-  min=0;
-  max=names.length-1;
+  
 
   console.log('ver key '+ key +' ver cantidad de llave '+llave+' ver el resto '+ resto);
 
@@ -207,11 +201,6 @@ function fnCopa(){
    $$('#coparonda').append('<div class="block block-strong"><p>Final</p></div>'); 
  } 
 
-  for (i = 0; i < llave; i++){
-    aleatorio=math.random()*(max-min)+min;
-  }
-
-
   $$('#copallaves').html('');
   for (i = 0; i < llave; i++) {
      $$('#copallaves').append('<div class="block block-strong"><div class="row"><div> llave '+i+'</div><input type="number" id="puntos" class="p1" max="10" min="0" minlength="1" maxlength="2" placeholder="0" /></div><div class="row"><div> llave '+i+'</div><input type="number" id="puntos" class="p1" max="10" min="0" minlength="1" maxlength="2" placeholder="0"/></div></div>');
@@ -219,7 +208,24 @@ function fnCopa(){
   
 
 }
+//.......................................................................................//
+function fnLiga(){
+  var rondas=nro/2;
+  var enfrentamientos=nro-1;
+  var cantvs= rondas*enfrentamientos;
+  console.log('ver cantvs '+ cantvs );
 
+  $$('#ligavs').html('');
+  $$('#ligavs').append('<div class="block block-strong"><p>Torneo '+nomtorneo+'</p></div>');
 
+  $$('#ligaronda').html('');
 
+mainView.router.navigate('/liga/');
+}
+//.......................................................................................//
+function fnGrupo(){
+  $$('#grupovs').html('');
+  $$('#grupovs').append('<div class="block block-strong"><p>Torneo '+nomtorneo+'</p></div>');
 
+mainView.router.navigate('/grupo/');
+}
